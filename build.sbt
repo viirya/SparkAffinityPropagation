@@ -11,9 +11,9 @@ scalacOptions := Seq("-unchecked", "-deprecation", "-encoding", "utf8", "-featur
 libraryDependencies ++= {
   Seq(
     "org.scalatest"                 %%  "scalatest"                 % "2.2.5"       % "test",
-    "org.apache.spark"              %%  "spark-core"                % "1.6.0"       % "provided",
-    "org.apache.spark"              %%  "spark-mllib"               % "1.6.0"       % "provided",
-    "org.apache.spark"              %%  "spark-graphx"              % "1.6.0"       % "provided"
+    "org.apache.spark"              %%  "spark-core"                % "2.2.0"       % "provided",
+    "org.apache.spark"              %%  "spark-mllib"               % "2.2.0"       % "provided",
+    "org.apache.spark"              %%  "spark-graphx"              % "2.2.0"       % "provided"
   )
 }
 
