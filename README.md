@@ -7,6 +7,8 @@ Affinity Propagation on Spark implements Affinity Propagation algorithm on clust
 
 ## Build
 
+Currently it supports Spark 2.2.0. It also has tested on Spark 1.6.0 before.
+
 sbt/sbt assembly
 
 ## API
