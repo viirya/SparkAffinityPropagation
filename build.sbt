@@ -1,5 +1,3 @@
-import AssemblyKeys._
-
 name := "spark-affinitypropagation"
 
 version := "1.0"
@@ -17,8 +15,6 @@ libraryDependencies ++= {
   )
 }
 
-assemblySettings
-
 mergeStrategy in assembly <<= (mergeStrategy in assembly) { (old) => {
     case PathList("META-INF", "ECLIPSEF.RSA" ) => MergeStrategy.discard
     case PathList("META-INF", "mailcap" ) => MergeStrategy.discard
@@ -31,3 +27,9 @@ mergeStrategy in assembly <<= (mergeStrategy in assembly) { (old) => {
     case x => old(x)
   }
 }
+
+spName := "viirya/spark-affinitypropagation"
+
+sparkVersion := "2.2.0"
+
+sparkComponents ++= Seq("mllib", "graphx")
