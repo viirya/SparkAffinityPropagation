@@ -2,4 +2,4 @@ resolvers += "bintray-spark-packages" at "https://dl.bintray.com/spark-packages/
 
 addSbtPlugin("org.spark-packages" % "sbt-spark-package" % "0.2.6")
 
-addSbtPlugin("com.eed3si9n" % "sbt-assembly" % "0.11.2")
+addSbtPlugin("com.eed3si9n" % "sbt-assembly" % "0.14.3")
