@@ -1,9 +1,11 @@
 
-package org.viirya
+package org.viirya.spark.ml
 
 import scala.collection.mutable
 
 import org.scalatest.{BeforeAndAfterAll, FunSuite, Suite}
+
+import org.viirya.spark.ml.AffinityPropagation._
 
 import org.apache.spark.{SparkConf, SparkContext}
 import org.apache.spark.graphx.{Edge, Graph}
@@ -29,8 +31,6 @@ class AffinityPropagationSuite extends FunSuite with BeforeAndAfterAll { self: S
       super.afterAll()
     }
   }  
-
-  import org.viirya.AffinityPropagation._
 
   test("affinity propagation") {
     /**

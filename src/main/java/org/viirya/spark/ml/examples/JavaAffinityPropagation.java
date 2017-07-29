@@ -1,13 +1,13 @@
 
-package org.viirya.exemplar;
+package org.viirya.spark.ml.examples;
 
 import scala.Tuple3;
 
 import com.google.common.collect.Lists;
 
-import org.viirya.AffinityPropagation;
-import org.viirya.AffinityPropagationCluster;
-import org.viirya.AffinityPropagationModel;
+import org.viirya.spark.ml.AffinityPropagation;
+import org.viirya.spark.ml.AffinityPropagationCluster;
+import org.viirya.spark.ml.AffinityPropagationModel;
 
 import org.apache.spark.SparkConf;
 import org.apache.spark.api.java.JavaRDD;

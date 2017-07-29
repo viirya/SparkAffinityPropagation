@@ -1,5 +1,5 @@
 
-package org.viirya
+package org.viirya.spark.ml
 
 import scala.collection.mutable
 
@@ -142,7 +142,7 @@ class AffinityPropagation (
     private var normalization: Boolean,
     private var symmetric: Boolean) extends Serializable {
 
-  import org.viirya.AffinityPropagation._
+  import org.viirya.spark.ml.AffinityPropagation._
 
   /** Constructs a AP instance with default parameters: {maxIterations: 100, lambda: `0.5`,
    *    normalization: false, symmetric: true}.

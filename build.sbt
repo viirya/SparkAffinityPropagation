@@ -1,6 +1,6 @@
 import AssemblyKeys._
 
-name := "BigDataExcercise"
+name := "spark-affinitypropagation"
 
 version := "1.0"
 
