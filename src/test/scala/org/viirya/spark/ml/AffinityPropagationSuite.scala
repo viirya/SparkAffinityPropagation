@@ -3,14 +3,15 @@ package org.viirya.spark.ml
 
 import scala.collection.mutable
 
-import org.scalatest.{BeforeAndAfterAll, FunSuite, Suite}
+import org.scalatest.{BeforeAndAfterAll, Suite}
+import org.scalatest.funsuite.AnyFunSuite
 
 import org.viirya.spark.ml.AffinityPropagation._
 
 import org.apache.spark.{SparkConf, SparkContext}
 import org.apache.spark.graphx.{Edge, Graph}
 
-class AffinityPropagationSuite extends FunSuite with BeforeAndAfterAll { self: Suite =>
+class AffinityPropagationSuite extends AnyFunSuite with BeforeAndAfterAll { self: Suite =>
   @transient var sc: SparkContext = _
 
   override def beforeAll() {

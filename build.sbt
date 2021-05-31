@@ -2,20 +2,20 @@ name := "spark-affinitypropagation"
 
 version := "1.0"
 
-scalaVersion := "2.10.4"
+scalaVersion := "2.12.14"
 
 scalacOptions := Seq("-unchecked", "-deprecation", "-encoding", "utf8", "-feature")
 
 libraryDependencies ++= {
   Seq(
-    "org.scalatest"                 %%  "scalatest"                 % "2.2.5"       % "test",
-    "org.apache.spark"              %%  "spark-core"                % "2.2.0"       % "provided",
-    "org.apache.spark"              %%  "spark-mllib"               % "2.2.0"       % "provided",
-    "org.apache.spark"              %%  "spark-graphx"              % "2.2.0"       % "provided"
+    "org.scalatest"                 %%  "scalatest"                 % "3.2.9"       % "test",
+    "org.apache.spark"              %%  "spark-core"                % "3.1.1"       % "provided",
+    "org.apache.spark"              %%  "spark-mllib"               % "3.1.1"       % "provided",
+    "org.apache.spark"              %%  "spark-graphx"              % "3.1.1"       % "provided"
   )
 }
 
-mergeStrategy in assembly <<= (mergeStrategy in assembly) { (old) => {
+mergeStrategy in assembly ~= ( (old) => {
     case PathList("META-INF", "ECLIPSEF.RSA" ) => MergeStrategy.discard
     case PathList("META-INF", "mailcap" ) => MergeStrategy.discard
     case PathList("com", "esotericsoftware", "minlog", ps ) if ps.startsWith("Log") => MergeStrategy.discard
@@ -26,10 +26,5 @@ mergeStrategy in assembly <<= (mergeStrategy in assembly) { (old) => {
     case PathList("org", "apache", "hadoop", "yarn", ps @ _* ) => MergeStrategy.first
     case x => old(x)
   }
-}
+)
 
-spName := "viirya/spark-affinitypropagation"
-
-sparkVersion := "2.2.0"
-
-sparkComponents ++= Seq("mllib", "graphx")
