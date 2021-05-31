@@ -3,7 +3,6 @@ package org.viirya.spark.ml
 
 import scala.collection.mutable
 
-import org.apache.spark.SparkException
 import org.apache.spark.annotation.Experimental
 import org.apache.spark.api.java.JavaRDD
 import org.apache.spark.graphx._
@@ -438,7 +437,7 @@ object AffinityPropagation extends Logging {
 
         val delta = vaD.join(prev_vaD).values.map { x =>
           (x._1.availability - x._2.availability, x._1.responsibility - x._2.responsibility)
-        }.collect().foldLeft((0.0, 0.0)) {(s, t) => (s._1 + t._1, s._2 + t._2)}
+        }.treeReduce((s, t) => (s._1 + t._1, s._2 + t._2))
 
         logInfo(s"$msgPrefix: availability delta = ${delta._1}.")
         logInfo(s"$msgPrefix: responsibility delta = ${delta._2}.")
